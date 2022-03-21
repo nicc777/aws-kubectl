@@ -4,6 +4,8 @@ The following was tested on a test k3s cluster [deployed using multipass](https:
 
 A directory called `runtime` is also now in the `.gitignore`, and it is therefore a "safe place" to temporarily store sensitive information (credentials).
 
+Also check out the [blog post](https://www.nicc777.com/blog/2022/2022-03-21.html) discussing the various use cases and other little bits of info that may also be important.
+
 ## Preparation
 
 1. Clone this repo
@@ -56,7 +58,7 @@ To test that the secret key was correctly set:
 echo "-->"`kubectl get secret aws-secrets -o jsonpath="{.data.aws-secret-access-key}" -n infrastructure | base64 -d`"<--"
 ```
 
-_**Note**_: Ensure no newline is present with teh output.
+_**Note**_: Ensure no newline is present with the output.
 
 ## Force an initial Job Run
 
@@ -82,7 +84,7 @@ To get the full ECR config:
 kubectl get secret aws-registry -o jsonpath="{.data}" -n infrastructure
 ```
 
-_**Note**_: The value in `.dockerconfigjson` is also base64 encoded. Decode with: `echo "__THE_VALUE__ | base64 -d"`
+_**Note**_: The value in `.dockerconfigjson` is also base64 encoded. Decode with: `echo "__THE_VALUE__" | base64 -d`
 
 # OLD Readme from Original Repo
 
