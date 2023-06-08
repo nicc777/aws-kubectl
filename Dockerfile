@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3-alpine3.18
 MAINTAINER Mike Petersen <mike@odania-it.de>
 
 RUN apk --no-cache add curl
